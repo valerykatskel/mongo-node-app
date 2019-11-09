@@ -5,7 +5,9 @@
   "main": "app.js",
   "scripts": {
     "start": "node app",
-    "dev": "nodemon app"
+    "dev": "nodemon app",
+    "build-css": "node-sass --include-path scss src/scss/main.scss public/css/main.css",
+    "watch-css": "nodemon -e scss -x \"npm run build-css\""
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,7 @@
     "mongoose": "^5.7.9"
   },
   "devDependencies": {
+    "node-sass": "^4.13.0",
     "nodemon": "^1.19.4"
   }
 }

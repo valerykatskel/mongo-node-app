@@ -1,6 +1,7 @@
 require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
+const path = require('path')
 const exphbs = require('express-handlebars')
 const appRoutes = require('./routes/app-routes')
 
@@ -12,12 +13,13 @@ const hbs = exphbs.create({
     extname: 'hbs'
 })
 
-app.engine('hbs', hbs.engine)
-app.set('view engine', 'hbs')
-app.set('views', 'views')
+app.engine('hbs', hbs.engine) // specify the view engine you will use
+app.set('view engine', 'hbs') // specify the view engine you will use
+app.set('views', path.join(__dirname, 'src/views')) // specify the folder where all views will be placed                    
 
 app.use(express.urlencoded({ extended: true })) // to allow Express.js understand req.body
-app.use(appRoutes)
+app.use(appRoutes) // where are app routes
+app.use(express.static(path.join(__dirname, 'public'))) // to allow Express.js understand where there are static files such as css, images
 
 async function start() {
     try {

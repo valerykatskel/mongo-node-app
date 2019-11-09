@@ -1,0 +1,25 @@
+$backgroundColor: #f3f3f33;
+$defPad: 10px;
+
+.todo {
+    margin-bottom: $defPad;
+    span {
+        &.completed {
+            text-decoration: line-through;
+        }
+    }    
+
+    label {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
+        background: $backgroundColor;
+        padding: $defPad;
+    }
+
+    i {
+        z-index: 2;
+    }
+}

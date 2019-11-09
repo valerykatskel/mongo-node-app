@@ -1,0 +1,17 @@
+.todo {
+  margin-bottom: 10px; }
+  .todo span.completed {
+    text-decoration: line-through; }
+  .todo label {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    background: #f3f3f33;
+    padding: 10px; }
+  .todo i {
+    z-index: 2; }
+
+.container h2 {
+  color: red; }
