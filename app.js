@@ -20,7 +20,7 @@ app.use(appRoutes)
 
 async function start() {
     try {
-        await mongoose.connect(`mongodb+srv://${MONGO_DB_USER}:${MONGO_DB_PASSWORD}@${MONGO_DB_CLUSTER}.mongodb.net/${MONGO_DB_DATABASE_NAME}`, {
+        await mongoose.connect(`mongodb+srv://${process.env.MONGO_DB_USER}:${process.env.MONGO_DB_PASSWORD}@${process.env.MONGO_DB_CLUSTER}.mongodb.net/${process.env.MONGO_DB_DATABASE_NAME}`, {
             useNewUrlParser: true,
             useFindAndModify: false,
             useUnifiedTopology: true,
